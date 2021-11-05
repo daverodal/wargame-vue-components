@@ -1,0 +1,24 @@
+{
+  "name": "@markarian/wargame-vue-components",
+  "version": "0.0.1",
+  "main": "dist/wargame-vue-components.umd.js",
+  "module": "dist/wargame-vue-components.esm.js",
+  "unpkg": "dist/wargame-vue-components.min.js",
+  "browser": {
+    "./sfc": "src/wargame-vue-components.vue"
+  },
+  "scripts": {
+    "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
+    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/wargame-vue-components.umd.js",
+    "build:es": "rollup --config build/rollup.config.js --format es --file dist/wargame-vue-components.esm.js",
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/wargame-vue-components.min.js"
+  },
+  "devDependencies": {
+    "rollup": "^1.17.0",
+    "@rollup/plugin-buble": "^0.21.3",
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "rollup-plugin-vue": "^5.0.1",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
