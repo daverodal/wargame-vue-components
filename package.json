@@ -1,6 +1,6 @@
 {
   "name": "@markarian/wargame-vue-components",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/wargame-vue-components.umd.js",
   "module": "dist/wargame-vue-components.esm.js",
   "unpkg": "dist/wargame-vue-components.min.js",
