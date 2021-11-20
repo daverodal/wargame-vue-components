@@ -18,13 +18,12 @@
                 </div>
                 </div>
             </div>
-            <button id="crt-details-button" @click="toggleShowDetails" class="btn">Details</button>
+            <button id="crt-details-button" class="btn">Details</button>
             <div v-if="showDetails" v-html="details"></div>
          </div>
 </template>
 
 <script>
-    import {store} from "./store/store";
     import {mapMutations} from "vuex";
     import {DR} from '@markarian/wargame-helpers'
     import {doitCRT} from "@markarian/wargame-helpers";

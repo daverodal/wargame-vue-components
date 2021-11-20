@@ -1,7 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
 Vue.use(Vuex);
-
 import {mapData} from "./mapData";
 import {headerData} from "./headerData";
 import {boxesData} from "./boxesData";
@@ -92,6 +91,9 @@ export const store = new Vuex.Store({
         },
         setCrt(state, crt){
             state.crt = {...state.crt, ...crt}
+        },
+        setCrtDetails(state, details){
+            state.crt.details = details;
         }
     }
 })

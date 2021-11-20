@@ -649,7 +649,9 @@ export class SyncController {
             var activeCombatLine = "";
             vueStore.commit('headerData/combatStatus',  "");
             let crt = {};
-            crt.details = "";
+            // crt.details = "";
+            vueStore.commit('setCrtDetails', "");
+
             crt.index = false;
             if (combatRules) {
                 var cD = combatRules.currentDefender;
@@ -685,7 +687,8 @@ export class SyncController {
                         let oddsDisplay = crtHeader[combatCol-1] || "< "+ crtHeader[0];
                         let newLine = isNaN(oddsCol)? '' : "<h5>odds = " + oddsDisplay + " </h5>";
                         newLine += details;
-                        crt.details = newLine;
+                        vueStore.commit('setCrtDetails', details);
+                        // crt.details = newLine;
                     }
                     cdLine = "";
                     var combatIndex = 0;
@@ -816,7 +819,8 @@ export class SyncController {
                         }
 
 
-                        crt.details = "<h5>odds = " + currentOddsDisp + "</h5>" + details;
+                        // crt.details = "<h5>odds = " + currentOddsDisp + "</h5>" + details;
+                        vueStore.commit('setCrtDetails', "<h5>odds = " + currentOddsDisp + "</h5>" + details);
                     }
                     let noCombats = false;
                     if (Object.keys(combatRules.combatsToResolve) == 0) {

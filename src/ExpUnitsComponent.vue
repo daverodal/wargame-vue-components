@@ -1,6 +1,6 @@
 <template>
     <div class="units-component">
-        <unit-component v-if="!myfilter || unit.forceId === myfilter"
+        <unit-component :class="isMoving(unit) ? 'on-top' : ''" v-if="!myfilter || unit.forceId === myfilter"
                         v-for="(unit,key) in myunits" :key="key" :unit="unit"></unit-component>
         <unit-component class="ghost" v-for="(unit,key) in myghosts" :key="'ghost'+key" :unit="unit"></unit-component>
 
@@ -11,7 +11,6 @@
 <script type="text/javascript">
     export default{
         directives:{
-
         },
         props:['myunits','myghosts','myfilter'],
         data:()=>{
@@ -26,7 +25,6 @@
         },
       computed:{
           normalHex(){
-            debugger;
             if(this.$store.state.mD.trueRows){
               return 'WhiteColHex.svg';
             }
@@ -41,9 +39,18 @@
           }
           return [];
         },
+        isMoving(){
+          return (unit) => {
+            if(unit.status === STATUS_MOVING){
+              return true;
+            }
+            return false;
+          }
+        },
           isSpinny(){
             return (unit) => {
-              const ret = unit.id.match(new RegExp('Hex'+unit.hexagon+'$'));
+              let id = unit.id + '';
+              const ret = id.match(new RegExp('Hex'+unit.hexagon+'$'));
               if(ret === null){
                 return false;
               }
@@ -54,6 +61,9 @@
     }
 </script>
 <style scoped lang="scss">
+  .on-top{
+    z-index: 10 !important;
+  }
     .map-symbol{
         display:none;
     }

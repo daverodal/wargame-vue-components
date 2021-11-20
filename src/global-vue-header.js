@@ -24,7 +24,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 /* globl-vue-header */
-debugger; // this is the plugin.
 import {rotateUnits} from './global-vue-helper';
 import { syncObj } from "@markarian/wargame-helpers";
 import {counterClick, fixItAll, mapClick, doitCRT} from "@markarian/wargame-helpers";
