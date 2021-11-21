@@ -1,14 +1,13 @@
 <template>
   <div class="obc">
     <div class="game-turn" v-for="turn in maxTurn">
-
       <div :class="{'turn-counter': turn ==   currentTurn}">Turn {{ turn }}</div>
-
       <div v-for="(units, key) in unitsThisTurn(turn)">
         {{key}}
         <units-component :myunits="units"></units-component>
       </div>
     </div>
+    <div class="close" @click.stop="closeMe">X</div>
   </div>
 </template>
 
@@ -18,6 +17,11 @@ export default {
   props:['obc'],
   mounted(){
     debugger;
+  },
+  methods:{
+    closeMe(){
+      clickThrough.menuClick('showObc')
+    }
   },
   computed:{
     unitsThisTurn(){
