@@ -10,8 +10,6 @@
 </template>
 
 <script>
-    import VueDraggableResizable from 'vue-draggable-resizable'
-
     export default {
         data: function () {
             return {

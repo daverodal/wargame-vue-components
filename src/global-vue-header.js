@@ -49,7 +49,6 @@ document.addEventListener("DOMContentLoaded",function(){
     // })
     let crtPanzoom = $('#crt-drag-wrapper').panzoom({
             onPan: function (e, panzoom, e2, e3, e4) {
-                console.log('i pan');
             },
             onEnd(a,b,c,d,e,f){
                 let vueStore = store;
@@ -109,7 +108,6 @@ document.addEventListener("DOMContentLoaded",function(){
     );
     let undoPanzoom = $('#undo-drag-wrapper').panzoom({
         onPan: function (e, panzoom, e2, e3, e4) {
-            console.log('i pan');
         },
         onEnd(a,b,c,d,e,f){
 

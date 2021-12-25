@@ -274,7 +274,6 @@ export class SyncController {
     }
     init(){
         syncObj.registerInit((data) => {
-            console.log("Init");
             vueStore.commit('floatMessage/clear')
         });
     }
@@ -284,7 +283,6 @@ export class SyncController {
     }
     flashMessages(){
         syncObj.register("flashMessages",  (messages, data) => {
-            console.log(messages);
             let msgQueue = [];
             while(messages.length> 0){
                 let msg = messages.shift();
@@ -475,7 +473,6 @@ export class SyncController {
 
 
                 if(emptyDeploy){
-                    console.log("CLOSE");
                     clickThrough.show.units.deployWrapper = false;
                 }else{
                     clickThrough.show.units.deployWrapper = true;

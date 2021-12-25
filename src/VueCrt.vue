@@ -95,7 +95,6 @@
             },
             pinCombat(index, e){
               return;
-              console.log(e);
                 const x = DR.dragged;
                 if(DR.dragged){
                     return;
