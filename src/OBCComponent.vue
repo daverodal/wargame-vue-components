@@ -75,7 +75,8 @@ export default {
     background-color:mediumaquamarine;
   }
   .unit {
-    position: static !important;
+    position: relative;
+    margin-left:15px;
     pointer-events: none;
   }
 }

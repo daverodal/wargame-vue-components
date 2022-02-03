@@ -58,7 +58,7 @@
                 return this.$store.getters.currentTable.next;
             },
             numTables(){
-                return this.$store.state.crtData.crts.length;
+                return Object.keys(this.$store.state.crtData.crts).length;
             },
             showDetails(){
                 return this.$store.state.crt.showDetails

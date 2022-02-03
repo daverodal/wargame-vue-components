@@ -1054,9 +1054,9 @@ export class SyncController {
             }
 
             if(topVue.specialEvents.length > 0){
-                setTimeout(()=>{
-                    topVue.specialEvents = [];
-                }, 3000);
+                // setTimeout(()=>{
+                //     topVue.specialEvents = [];
+                // }, 3000);
             }
         });
     }
